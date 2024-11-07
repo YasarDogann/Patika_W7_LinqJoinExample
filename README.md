@@ -59,170 +59,99 @@ Notlar:
 
 
 
-## Kod: Series Class'ı
+
+
+## Kod: Authors ve Books Class'ı
 ```csharp
-public class Series
+public class Authors
 {
-    // Özellikler - Properties
-    public string SerieName { get; set; }
-    public int DebutYear { get; set; }
-    public string Type { get; set; }
-    public int PremiereDate { get; set; }
-    public string Directors { get; set; }
-    public string Platform { get; set; }
+    public int AuthorId { get; set; }
+    public string Name { get; set; }
+}
 
-    // Boş Yapıcı method
-    public Series() { }
-
-    // parametreli yapıcı method
-    public Series(string serieName, int debutYear, string type, int premierDate, string directors, string platform)
-    {
-        SerieName = serieName;
-        DebutYear = debutYear;
-        Type = type;
-        PremiereDate = premierDate;
-        Directors = directors;
-        Platform = platform;
-    }
-
-    // dizi bilgilerini string formata dönüştüren object sınıfından override edilen ToString methodu
-    public override string ToString()
-    {
-        return $"Dizi Adı: {SerieName.PadRight(20)}  Yapım Yılı: {DebutYear}     Türü: {Type.PadRight(10)} " +
-            $"Yayınlanma Tarihi: {PremiereDate}      Yönetmenler: {Directors.PadRight(10)} Platform: {Platform}  ";
-    }
-
+public class Books
+{
+    public int BookId { get; set; }
+    public string Title { get; set; }
+    public int AuthorId { get; set; }
 }
 ```
 
-## Kod: ComedySeries Class'ı
-
-```csharp
-public class ComedySeries 
-{
-    // Özellikler - Properties
-    public string SerieName { get; set; }
-    public string Type { get; set; }
-    public string Directors { get; set; }
-    public ComedySeries(string name, string type, string directors)
-    {
-        SerieName = name;
-        Type = type;
-        Directors = directors;
-    }
-
-    public override string ToString()
-    {
-        return $"{SerieName.PadRight(20)} {Type.PadRight(10)} {Directors}";
-    }
-}
-```
 
 ## Kod: Main Class
 
 ```csharp
 static void Main(string[] args)
 {
-    // Series sınıfından dinamik bir liste oluşturuluyor
-    List<Series> series = new List<Series>();
-    int debutYear, premiereDate;
-
-    bool isContinue = true;
-
-    while (isContinue)
+    // Kitap Lİstesi
+    List<Books> books = new List<Books>
     {
-        // Kullanıcıya dizi bilgilerini sorma ve input alma
-        Console.ForegroundColor = ConsoleColor.Yellow;
-        Console.WriteLine("----- DİZİ EKLEME YAPMA İŞLEMİ -----");
-        Console.ResetColor();
-
-        Console.ForegroundColor= ConsoleColor.Red;
-        Console.Write("Dizinin Adı: ");
-        Console.ResetColor();
-        string name = Console.ReadLine();
-
-        Console.ForegroundColor = ConsoleColor.Red;
-        Console.Write("Yapım Yılı: ");
-        Console.ResetColor();
-        string yearInput = Console.ReadLine();
-        while (!int.TryParse(yearInput, out debutYear))
-        {
-            Console.Write("Geçerli bir yıl girin: ");
-            yearInput = Console.ReadLine();
-        }
-
-        Console.ForegroundColor = ConsoleColor.Red;
-        Console.Write("Türü: ");
-        Console.ResetColor();
-        string type = Console.ReadLine();
-
-        Console.ForegroundColor = ConsoleColor.Red;
-        Console.Write("Yayınlanma Tarihi: ");
-        Console.ResetColor();
-        string premiereInput = Console.ReadLine();
-        while (!int.TryParse(premiereInput, out premiereDate))
-        {
-            Console.Write("Geçerli bir yıl girin: ");
-            premiereInput = Console.ReadLine();
-        }
-
-        Console.ForegroundColor = ConsoleColor.Red;
-        Console.Write("Yönetmenler: ");
-        Console.ResetColor();
-        string directors = Console.ReadLine();
-
-        Console.ForegroundColor = ConsoleColor.Red;
-        Console.Write("Yayınlanan Platform: ");
-        Console.ResetColor();
-        string platform = Console.ReadLine();
-
-        Console.ForegroundColor = ConsoleColor.Red;
-        Console.WriteLine("Devam Etmek İstiyor Musun: (Evet: E-e || Hayır: H-h)");
-        Console.ResetColor();
-        char choose = char.Parse(Console.ReadLine().ToLower());
-
-        // Devam edip etmeyeceği soruluyor
-        if (choose == 'e' || choose == 'E') isContinue = true; // evet derse yeni dizi eklemek için döngü başına döner
-        else if (choose == 'h' || choose == 'H') isContinue = false; // hayır derse döngü biter
-
-        // Yeni bir dizi oluşturulup listeye ekleniyor
-        Series newSerie = new Series(name, debutYear, type, premiereDate, directors, platform);
-        series.Add(newSerie);
-
-        Console.ForegroundColor = ConsoleColor.Green;
-        Console.WriteLine("Dizi Başarıyla Eklendi\r\n");
-        Console.ResetColor();
-    }
+        new Books {BookId = 1, Title = "Kar", AuthorId = 1},
+        new Books {BookId = 2, Title = "İstanbul", AuthorId = 1},
+        new Books {BookId = 3, Title = "10 Minutes 38 Seconds in This Strange World", AuthorId = 2},
+        new Books {BookId = 4, Title = "Beyoğlu Raspodisi", AuthorId = 3}
+    };
 
 
-    // Komedi dizilerinden yeni bir liste olşturduk
-    List<ComedySeries> comedySeriesList = series.Where(s => s.Type.Contains("Komedi"))
-                                                .Select(s => new ComedySeries(s.SerieName, s.Type, s.Directors))
-                                                .OrderBy(cs => cs.SerieName)
-                                                .ThenBy(cs => cs.Directors)
-                                                .ToList();
-    // Komedi dizilerini ekrana yazdırıyoruz
-    Console.ForegroundColor= ConsoleColor.Green;
-    Console.WriteLine("\nKomedi Dizileri:");
-    Console.ResetColor();
-    foreach (var comedySeries in comedySeriesList)
+    // Yazar Listesi
+    List<Authors> authors = new List<Authors>
     {
-        Console.WriteLine(comedySeries);
-    }
+        new Authors {AuthorId = 1, Name= "Orhan Pamuk" },
+        new Authors {AuthorId = 2, Name= "Elif Şafak" },
+        new Authors {AuthorId = 3, Name= "Ahmet Ümit" }
+    };
 
-    // Eklenen Tüm diziler ekrana yazdırırlır
-    Console.ForegroundColor= ConsoleColor.Green;
-    Console.WriteLine("\r\nEklenen dizizler");
-    Console.ResetColor();
-    foreach (Series serie in series)
+    #region Yöntem1: Method  Sözdizimi
+
+    var query = authors.Join(books,
+                        authors => authors.AuthorId,
+                        books => books.AuthorId,
+                        (authors, books) => new
+                        {
+                            BookName = books.Title,
+                            AuthorName = authors.Name
+                        }
+                        );
+    #endregion
+
+
+    #region Yöntem2: Sorgu Sözdizimi
+    var query2 = from author in authors
+                join book in books on author.AuthorId equals book.AuthorId
+                select new
+                {
+                    BookName = book.Title,
+                    AuthorName = author.Name,
+                };
+
+    #endregion
+
+    foreach (var book in query2)
     {
-        Console.WriteLine(serie);
+        // "Kitap Adı:" kısmını renklendir
+        Console.ForegroundColor = ConsoleColor.Red;
+        Console.Write("Kitap Adı: ");
+
+        // Kitap adını farklı renkte yazdır
+        Console.ForegroundColor = ConsoleColor.White;
+        Console.Write($"{book.BookName.PadRight(20)} ");
+
+        // "Yazar Adı:" kısmını renklendir
+        Console.ForegroundColor = ConsoleColor.Red;
+        Console.Write("Yazar Adı: ");
+
+        // Yazar adını farklı renkte yazdır
+        Console.ForegroundColor = ConsoleColor.White;
+        Console.WriteLine(book.AuthorName);
+
+        // Renkleri varsayılana döndür
+        Console.ResetColor();
     }
 }
 ```
 
 ## Uygulama Çıktısı: 
-![diziler](https://github.com/user-attachments/assets/69a4f8a9-01bd-4ee5-9b29-9a79abf61c10)
+![resim](https://github.com/user-attachments/assets/1b697d37-0ef6-4a1a-a60f-fe0d8e344fc2)
 
 
 
