@@ -18,17 +18,17 @@ Bir kütüphane yönetim sistemi oluşturun. Bu sistemde iki adet tablo bulunmak
 
  - Yazarlar Tablosu (Authors)
 
-   - AuthorId (int) - Yazarın benzersiz kimliği
+   - `AuthorId (int)` - Yazarın benzersiz kimliği
 
-   - Name (string) - Yazarın adı
+   - `Name (string)`  - Yazarın adı
 
  - Kitaplar Tablosu (Books)
 
-        BookId (int) - Kitabın benzersiz kimliği
+   - `BookId (int)`   - Kitabın benzersiz kimliği
 
-        Title (string) - Kitabın başlığı
+   - `Title (string)` - Kitabın başlığı
 
-        AuthorId (int) - Kitabın yazarının kimliği (Yazarlar tablosundaki AuthorId ile ilişkilidir)
+   - `AuthorId (int)` - Kitabın yazarının kimliği (Yazarlar tablosundaki AuthorId ile ilişkilidir)
 
 Görev:
 
