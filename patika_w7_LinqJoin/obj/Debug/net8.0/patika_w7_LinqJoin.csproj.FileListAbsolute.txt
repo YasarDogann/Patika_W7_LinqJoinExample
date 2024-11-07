@@ -1,0 +1,14 @@
+C:\Users\yasar\source\repos\Patika+\Week7\patika_w7_LinqJoin\patika_w7_LinqJoin\bin\Debug\net8.0\patika_w7_LinqJoin.exe
+C:\Users\yasar\source\repos\Patika+\Week7\patika_w7_LinqJoin\patika_w7_LinqJoin\bin\Debug\net8.0\patika_w7_LinqJoin.deps.json
+C:\Users\yasar\source\repos\Patika+\Week7\patika_w7_LinqJoin\patika_w7_LinqJoin\bin\Debug\net8.0\patika_w7_LinqJoin.runtimeconfig.json
+C:\Users\yasar\source\repos\Patika+\Week7\patika_w7_LinqJoin\patika_w7_LinqJoin\bin\Debug\net8.0\patika_w7_LinqJoin.dll
+C:\Users\yasar\source\repos\Patika+\Week7\patika_w7_LinqJoin\patika_w7_LinqJoin\bin\Debug\net8.0\patika_w7_LinqJoin.pdb
+C:\Users\yasar\source\repos\Patika+\Week7\patika_w7_LinqJoin\patika_w7_LinqJoin\obj\Debug\net8.0\patika_w7_LinqJoin.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\yasar\source\repos\Patika+\Week7\patika_w7_LinqJoin\patika_w7_LinqJoin\obj\Debug\net8.0\patika_w7_LinqJoin.AssemblyInfoInputs.cache
+C:\Users\yasar\source\repos\Patika+\Week7\patika_w7_LinqJoin\patika_w7_LinqJoin\obj\Debug\net8.0\patika_w7_LinqJoin.AssemblyInfo.cs
+C:\Users\yasar\source\repos\Patika+\Week7\patika_w7_LinqJoin\patika_w7_LinqJoin\obj\Debug\net8.0\patika_w7_LinqJoin.csproj.CoreCompileInputs.cache
+C:\Users\yasar\source\repos\Patika+\Week7\patika_w7_LinqJoin\patika_w7_LinqJoin\obj\Debug\net8.0\patika_w7_LinqJoin.dll
+C:\Users\yasar\source\repos\Patika+\Week7\patika_w7_LinqJoin\patika_w7_LinqJoin\obj\Debug\net8.0\refint\patika_w7_LinqJoin.dll
+C:\Users\yasar\source\repos\Patika+\Week7\patika_w7_LinqJoin\patika_w7_LinqJoin\obj\Debug\net8.0\patika_w7_LinqJoin.pdb
+C:\Users\yasar\source\repos\Patika+\Week7\patika_w7_LinqJoin\patika_w7_LinqJoin\obj\Debug\net8.0\patika_w7_LinqJoin.genruntimeconfig.cache
+C:\Users\yasar\source\repos\Patika+\Week7\patika_w7_LinqJoin\patika_w7_LinqJoin\obj\Debug\net8.0\ref\patika_w7_LinqJoin.dll
