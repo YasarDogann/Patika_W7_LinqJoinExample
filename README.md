@@ -32,7 +32,7 @@ Bir kütüphane yönetim sistemi oluşturun. Bu sistemde iki adet tablo bulunmak
 
 Görev:
 
-    Tabloları Tanımlayın:
+1. Tabloları Tanımlayın:
 
         Author ve Book adında iki sınıf oluşturun ve yukarıdaki tablo yapılarını bu sınıflara uygun şekilde tanımlayın.
 
